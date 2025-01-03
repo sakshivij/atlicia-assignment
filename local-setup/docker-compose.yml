@@ -1,0 +1,22 @@
+version: "3.4"
+
+services:
+  db:
+    image: postgres:13-alpine
+    platform: linux/amd64
+    container_name: db
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+  create_db:
+    image: postgres:13-alpine
+    platform: linux/amd64
+    command: ["sh", "-c", "psql -h db -U ${DB_USER} -d postgres -c 'CREATE DATABASE ${DB_NAME};'"]
+    environment:
+      PGPASSWORD: ${DB_PASSWORD}
+    depends_on:
+      - db
+    restart: "no"
