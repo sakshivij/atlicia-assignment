@@ -1,0 +1,84 @@
+data/mysql/*
+
+### Java ###
+*.class
+*.jar
+*.war
+*.ear
+
+# Logs
+*.log
+logs/
+log/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# Maven / Gradle #
+target/
+build/
+out/
+
+### Spring Boot ###
+# Ignore Spring Boot application-specific files
+*.pid
+*.gz
+
+# Ignore generated config and environment files
+.env
+.env.*
+
+### Eclipse IDE ###
+.metadata/
+.classpath
+.project
+.settings/
+bin/
+.apt_generated/
+.factorypath
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+target/
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+### OS ###
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+### Docker ###
+# Ignore Docker-related files
+docker-compose.override.yml
+.env.docker.local
+
+### Git ###
+# Ignore Git merge conflict files
+*.orig
+
+.vscode/*
