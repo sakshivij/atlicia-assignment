@@ -1,0 +1,16 @@
+version: "3.4"
+
+services:
+  flyway:
+    image: flyway/flyway
+    container_name: flyway-local
+    platform: linux/amd64
+    command:  migrate -url=jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME} -user=${DB_USER} -password=${DB_PASSWORD} -locations=filesystem:/flyway/sql
+    volumes:
+      - ./sql:/flyway/sql
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
